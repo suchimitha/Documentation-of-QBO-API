@@ -1,6 +1,6 @@
 title: Breadwinner API
-description: Documentation for Breadwinner API for QuickBooks Online 
-baseurl: "/Documentation-of-QBO-API" # the subpath of your site, e.g. /blog
+description: Documentation for Breadwinner API for Xero 
+baseurl: "/Breadwinner-for-Xero-API-Docs" # the subpath of your site, e.g. /blog
 url: "https://breadwinner-app.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
@@ -17,8 +17,8 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Breadwinner QuickBooks Online API":
-    - "//breadwinner-app.github.io/Documentation-of-QBO-API"
+  "Breadwinner Xero API":
+    - "//breadwinner-app.github.io/Breadwinner-for-Xero-API-Docs"
 
 
 

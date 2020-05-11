@@ -13,52 +13,55 @@ It is a type of string used to define the type of action that needs to be perfor
 
 <ul>
 
-<li><b>createContact</b>: Creates a Xero Contact. (includes Xero Customers and Xero Vendors)</li>
-<li><b>updateContact</b>: Updates a Xero Contact. (includes Xero Customers and Xero Vendors)</li>
-<li><b>fetchContacts</b>: Fetches a single Xero Contact or a list of Xero Contacts from Xero.</li>
-<li><b>createInvoice</b>: Creates an Invoice in Xero.</li>
-<li><b>updateInvoice</b>: Updates in Invoice in Xero.</li>
-<li><b>fetchInvoices</b>: Fetches either a single Invoice or list of Invoices from Xero.</li>
-<li><b>createBill</b>: Creates a Bill in Xero.</li>
-<li><b>updateBill</b>: Updates a Bill in Xero.</li>
-<li><b>fetchBills</b>: Fetches either a single Bill or list of Bills from Xero.</li>
-<li><b>createPurchaseOrder</b>: Creates a Purchase Order (PO) in Xero.</li>
-<li><b>updatePurchaseOrder</b>: Updates a Purchase Order (PO) in Xero.</li>
-<li><b>fetchPurchaseOrders</b>: Fetches either a single Purchase Order or a list of Purchase Orders from Xero.</li>
+<li><b>createContact</b>: Creates a QuickBooks Online Contact.</li>
+<li><b>updateContact</b>: Updates a QuickBooks Online Contact.</li>
+<li><b>fetchContacts</b>: Fetches a single QuickBooks Online Contact or a list of QuickBooks Online Contacts from QuickBooks Online.</li>
+<li><b>createVendor</b>: Creates a QuickBooks Online Vendor.</li>
+<li><b>updateVendort</b>: Updates a QuickBooks Online Vendor.</li>
+<li><b>fetchVendor</b>: Fetches a single QuickBooks Online Vendor or a list of QuickBooks Online Vendors from QuickBooks Online.</li>
+<li><b>createInvoice</b>: Creates an Invoice in QuickBooks Online.</li>
+<li><b>updateInvoice</b>: Updates in Invoice in QuickBooks Online.</li>
+<li><b>fetchInvoices</b>: Fetches either a single Invoice or list of Invoices from QuickBooks Online.</li>
+<li><b>createBill</b>: Creates a Bill in QuickBooks Online.</li>
+<li><b>updateBill</b>: Updates a Bill in QuickBooks Online.</li>
+<li><b>fetchBills</b>: Fetches either a single Bill or list of Bills from QuickBooks Online.</li>
+<li><b>createPurchaseOrder</b>: Creates a Purchase Order (PO) in QuickBooks Online.</li>
+<li><b>updatePurchaseOrder</b>: Updates a Purchase Order (PO) in QuickBooks Online.</li>
+<li><b>fetchPurchaseOrders</b>: Fetches either a single Purchase Order or a list of Purchase Orders from QuickBooks Online.</li>
 
 </ul>
 
 ## RequestObject - Class
-You have to create an Instance for RequestObject and pass to the "BreadwinnerAPI.call()” method as one of the parameters. <br/>
+You have to create an Instance for RequestObject and pass to the "BreadwinnerQBOAPI.call()” method as one of the parameters. <br/>
 ```yaml
-BreadwinnerAPI.RequestObject request = new BreadwinnerAPI.RequestObject(); 
+BreadwinnerQBOAPI.RequestObject request = new BreadwinnerQBOAPI.RequestObject(); 
 ```
 
 It consists of the following variables:
 
-### 1. xeroContact
-It is an instance of the AccountWrapper (Xero Contact Wrapper) class. To Create/Insert a Xero Contact, we should pass the desired values to the respective variables. For available xeroContact variables, please refer [here](https://dev-xero.breadwinner.com/docs/CustomerOperations) <br/>
+### 1. qboContacts
+It is an instance of the AccountWrapper (QuickBooks online Contact Wrapper) class. To Create/Insert a QuickBooks Online Contact, we should pass the desired values to the respective variables. For available qboContacts variables, please refer [here](https://dev-qboContacts.breadwinner.com/docs/CustomerOperations) <br/>
 It is of type List. but for now we are accepting only one record.
 
 ```yaml
-    List<bw_xero_api02.BreadwinnerAPI.AccountWrapper> xeroContactList = new list<bw_xero_api02.BreadwinnerAPI.AccountWrapper>();
-    bw_xero_api02.BreadwinnerAPI.AccountWrapper xeroContact = new bw_xero_api02.BreadwinnerAPI.AccountWrapper();
-    xeroContact.name = 'Test Customer';
-    xeroContactList.add(xeroContact);
-    request.xeroContact = xeroContactList;
+    List<qboapi_g1.BreadwinnerQBOAPI.AccountWrapper> qboContactList = new list<qboapi_g1.BreadwinnerQBOAPI.AccountWrapper>();
+    qboapi_g1.BreadwinnerQBOAPI.AccountWrapper qboContact = new qboapi_g1.BreadwinnerQBOAPI.AccountWrapper();
+    qboContact.name = 'Test Customer';
+    qboContactList.add(qboContact);
+    request.qboContacts = qboContactList;
 ```
 
-### 2. xeroInvoice
-It is an instance of the Invoice wrapper class. To Create/Insert Invoice we should pass desired values to variables. For all Invoice variables you can refer [here](https://dev-xero.breadwinner.com/docs/InvoiceOperations) <br/>
+### 2. qboInvoices
+It is an instance of the Invoicewrapper class. To Create/Insert Invoice we should pass desired values to variables. For all Invoice variables you can refer [here](https://dev-qbo.breadwinner.com/docs/InvoiceOperations) <br/>
 It is of type List. but for now we are accepting only one record.
 
 ```yaml
-    List<bw_xero_api02.BreadwinnerAPI.Invoice> xeroInvoiceList = new list<bw_xero_api02.BreadwinnerAPI.Invoice>();
-    bw_xero_api02.BreadwinnerAPI.Invoice xeroInvoice = new bw_xero_api02.BreadwinnerAPI.Invoice();
-    xeroInvoice.CustomerId = 'Test Customer'; 
-    xeroInvoice.description = 'desc';… 
-    xeroInvoiceList.add(xeroInvoice);
-    request.xeroInvoice = xeroInvoiceList;
+    List<qboapi_g1.BreadwinnerQBOAPI.Invoice> qboInvoiceList = new list<qboapi_g1.BreadwinnerQBOAPI.Invoice>();
+    qboapi_g1.BreadwinnerQBOAPI.Invoice qboInvoice = new qboapi_g1.BreadwinnerQBOAPI.Invoice();
+    qboInvoice.CustomerId = 'Test Customer'; 
+    qboInvoice.description = 'desc';… 
+    qboInvoiceList.add(qboInvoice);
+    request.qboInvoice = qboInvoiceList;
 ```
 
 ### 3. options 

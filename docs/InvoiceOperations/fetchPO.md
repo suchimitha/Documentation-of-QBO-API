@@ -7,7 +7,7 @@ nav_order: 9
 
 # Fetch Purchase Orders
 
-To get/fetch the Purchase Orders, pass the parameters to request.options variable and then call the method BreadwinnerAPI.call(). This method returns a list of Invoice wrapper records (xeroInvoices).
+To get/fetch the Purchase Orders, pass the parameters to request.options variable and then call the method BreadwinnerQBOAPI.call(). This method returns a list of Invoice wrapper records (Invoices).
 
 ## Sample Code
 
@@ -17,16 +17,16 @@ purchaseOrderID, purchaseOrderNumber, where, orderBy, pageNumber, modifiedAfter.
 
 ```scss
 try{
-    bw_xero_api02.BreadwinnerAPI.RequestObject req = new  bw_xero_api02.BreadwinnerAPI.RequestObject();
+    qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();
     req.options.put('page','1');
 
-    bw_xero_api02.BreadwinnerAPI.ResponseObject res =  bw_xero_api02.BreadwinnerAPI.call('fetchPurchaseOrders', req);
+    qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('fetchPurchaseOrders', req);
     if(res.errors.size()>0){
-        for(bw_xero_api02.BreadwinnerAPI.Error er :res.errors){
+        for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
             System.debug(er); 
         }
     }
-    system.debug('Purchase Orders '+res.xeroInvoices);
+    system.debug('Purchase Orders '+res.Invoices);
 }catch(Exception ex){
     System.debug('Exception occurred while creating customers in Stripe.'+ex.getStackTraceString());
 }

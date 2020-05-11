@@ -6,7 +6,7 @@ nav_order: 6
 ---
 # Fetch Bills
 
-To get/fetch the Bills, pass the parameters to request.options variable and then call the method BreadwinnerAPI.call(). This method returns a list of Invoice wrapper records (xeroInvoices).
+To get/fetch the Bills, pass the parameters to request.options variable and then call the method BreadwinnerQBOAPI.call(). This method returns a list of Invoice wrapper records (Invoices).
 
 ## Sample Code
 
@@ -15,17 +15,17 @@ invoiceID, invoiceNumber, where, orderBy, pageNumber, modifiedAfter.
 
 ```scss
 try{
-    bw_xero_api02.BreadwinnerAPI.RequestObject req = new  bw_xero_api02.BreadwinnerAPI.RequestObject();
+    qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();
     //req.options.put('invoicenumber','INV-0041');
     req.options.put('pagenumber','1');
 
-    bw_xero_api02.BreadwinnerAPI.ResponseObject res =  bw_xero_api02.BreadwinnerAPI.call('fetchBills', req);
+    qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('fetchBills', req);
     if(res.errors.size()>0){
-        for(bw_xero_api02.BreadwinnerAPI.Error er :res.errors){
+        for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
             System.debug(er); 
         }
     }
-    system.debug('Bills '+res.xeroInvoices);
+    system.debug('Bills '+res.Invoices);
 }catch(Exception ex){
     System.debug('Exception occurred while creating customers in Stripe.'+ex.getStackTraceString());
 }

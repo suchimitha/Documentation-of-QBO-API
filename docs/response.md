@@ -7,31 +7,31 @@ nav_order: 2
 # Response
 {: .no_toc }
 
-This method allows users to retrieve the data of a Quickbooks online Contact/Vendor/Invoice/Bill/PurchaseOrder.
+This method allows users to retrieve the data of a Xero Contact/Invoice/Bill/PurchaseOrder.
 
 
 ### ResponseObject - Class
-When we call “BreadwinnerQBOAPI.call()” method, User would get the response in the form of BreadwinnerQBOAPI.ResponseObject. It consists of the following variables.<br/>
+When we call “BreadwinnerAPI.call()” method, User would get the response in the form of BreadwinnerAPI.ResponseObject. It consists of the following variables.<br/>
 
 ### Status: 
-It is of type String, which represents the Response/Status code of the request returned by QuickBooks Online. <br/>
+It is of type String, which represents the Response/Status code of the request returned by Xero. <br/>
 E.g: ‘200’ - OK (Successful API call) <br/>
-Click [here](https://developer.qbo.com/documentation/api/http-response-codes) for more Status codes, and it's descriptions.
+Click [here](https://developer.xero.com/documentation/api/http-response-codes) for more Status codes, and it's descriptions.
 
-### Contacts
-It is of type List<AccountWrapper>, which contains the created QuickBooks Online Contact(s) data along with QuickBooks Online unique record Id.<br/> 
+### xeroContacts
+It is of type List<AccountWrapper>, which contains the created Xero Contact(s) data along with Xero unique record Id.<br/> 
 ```yaml
-List<qboapi_g1.AccountWrapper> qboContactsList = Response.Contacts
+List<bw_xero_api02.AccountWrapper> xeroContactsList = Response.xeroContacts
 ```
 
-### Invoices
-It is of type List<Invoice>, which contains the created QuickBooks Online Invoice(s) data along with QuickBooks Online unique record Id.<br/>
+### xeroInvoices
+It is of type List<Invoice>, which contains the created Xero Invoice(s) data along with Xero unique record Id.<br/>
 ```yaml
-List<qboapi_g1.Invoice> qboInvoices = Response.Invoices
+List<bw_xero_api02.Invoice> xeroInvoices = Response.XeroInvoices
 ```
 
 ### Errors
-It is of type “BreadwinnerQBOAPI.Error” class. All the Errors that are reported by QuickBooks Online or by Salesforce.
+It is of type “BreadwinnerAPI.Error” class. All the Errors that are reported by Xero or by Salesforce.
 
 Error class contains the following variables:
 <ul>
@@ -42,5 +42,5 @@ Error class contains the following variables:
 </ul>
 
 ```yaml
-message=REQUIRED_FIELD_MISSING: name, message=Enter the QuickBooks Online customer name. param=qboContacts[0].name
+message=REQUIRED_FIELD_MISSING: name, message=Enter the Xero customer name. param=xeroContact.name
 ```

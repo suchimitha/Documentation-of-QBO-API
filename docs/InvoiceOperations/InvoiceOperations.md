@@ -29,8 +29,6 @@ The following parameters are required to create or update an Invoice
 | PurchaseOrderNumber | String | Purchase Order | Last name of contact person (max length = 255)              |
 | DeliveryDate | String | Purchase Order | Date the goods are to be delivered - YYYY-MM-DD              |
 | PurchaseOrderDate | String | Purchase Order | Date purchase order was issued - YYYY-MM-DD. If the Date element is not specified, then it will default to the current date based on the timezone setting of the organisation              |
-| AccountId | String | All | If you wants to map with salesforce Account pass Salesforce Account ID, It is Optional            |
-| OpportunityId | String | All | If you wants to map with salesforce Opportunity pass Salesforce OpportunityID, It is Optional                 |
 
 
 ### Line Item Fields

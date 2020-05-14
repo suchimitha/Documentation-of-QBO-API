@@ -3,7 +3,7 @@
 </p>
 <br><br>
 <p align="center">
-    <h1 align="center">Breadwinner Xero API</h1>
+    <h1 align="center">Breadwinner QuickBooks Online</h1>
     
     <br><br><br>
 </p>

@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Breadwinner API
-description: Documentation for Breadwinner API for Xero 
+description: Documentation for Breadwinner API for QuickBooks Online 
 baseurl: "/Xero-API" # the subpath of your site, e.g. /blog
 url: "https://suchimitha.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -35,7 +35,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Breadwinner Xero API":
+  "Breadwinner QuickBooks Online API":
     - "//suchimitha.github.io/Xero-API"
 
 

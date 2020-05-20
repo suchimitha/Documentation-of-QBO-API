@@ -1,18 +1,17 @@
 ---
 layout: default
-title: Fetch Xero Contacts
+title: Fetch Vendor
 parent: Contact Operations
-nav_order: 3
+nav_order: 7
 ---
 
-# Fetch Xero Contacts
+# Fetch Vendor
 
-To get/fetch, the Xero Contact pass the parameters to request.Options variable and then call the method BreadwinnerAPI.call(). Returns a map of AccountWrapper records (xeroIdCustomerMap). 
+To get/fetch, the QuickBooks Online Vendor pass the parameters to request.Options variable and then call the method BreadwinnerAPI.call(). Returns a map of AccountWrapper records. 
 
 ## sample code 
 
-Optional parameters to fetch Xero Contact(s):
-ContactId, ContactNumber, where, orderby, pagenumber, modifiedafter.
+Optional parameters to fetch QuickBooks Vendor(s):
 
 ```scss
 try{

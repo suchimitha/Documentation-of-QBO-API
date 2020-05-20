@@ -38,7 +38,7 @@ Error class contains the following variables:
 <li><b>type</b>: The type of error returned. One of api_connection_error, api_error, authentication_error, idempotency_error, invalid_request_error, rate_limit_error, validation_exception. e.t.c.,</li>
 <li><b>message</b>: Represents the Error.</li>
 <li><b>code</b>: For some errors that could be handled programmatically, a short string indicating the error code reported.</li>
-<li><b>description</b>: Represents the extra info regarding the error or exception.</li>
+<li><b>Detail</b>: Represents the extra info regarding the error or exception.</li>
 </ul>
 
 ```yaml

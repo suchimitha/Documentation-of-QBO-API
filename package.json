@@ -2,9 +2,9 @@
   "name": "just-the-docs",
   "version": "0.2.7",
   "description": "A modern Jekyll theme for documentation",
-  "repository": "pmarsceill/Xero-API",
+  "repository": "pmarsceill/Documentation-of-QBO-API",
   "license": "MIT",
-  "bugs": "https://suchimitha.github.io/Xero-API/issues",
+  "bugs": "https://suchimitha.github.io/Documentation-of-QBO-API/issues",
   "devDependencies": {
     "stylelint": "^10.0.1",
     "stylelint-config-primer": "^8.0.0",

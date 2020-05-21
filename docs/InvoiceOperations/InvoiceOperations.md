@@ -8,6 +8,4 @@ permalink: /docs/InvoiceOperations
 
 # Invoice Operations
 
-
-
 This is under development.

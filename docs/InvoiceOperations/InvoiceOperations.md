@@ -16,8 +16,8 @@ The following parameters are required to create or update a contact
 |:----------|:-------------------------------------|
 | DocNumber | String | Invoice/Bill number  |
 | `CurrencyRef` | value_name | 
-| `CurrencyRef` | value_name |
-| GlobalTaxCalculation | String | fixed values (NotApplicable, )|
+| `CustomerRef` | value_name |
+| GlobalTaxCalculation | String | fixed values (NotApplicable, TaxInclusive)|
 | `BillEmail` | BillEmailClass | 
 | PrivateNote | String | 
 | `CustomerMemo` | value_name |

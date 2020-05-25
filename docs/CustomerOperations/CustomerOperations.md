@@ -11,62 +11,45 @@ permalink: docs/CustomerOperations
 
 The following parameters are required to create or update a contact
 
-| Field  | Type                          | Description |
+|Field  | Type                          | Description |
 |:----------|:-------------------------------------|
-
 |DisplayName * | String | Full name of contact/vendor/organisation (max length = 255), Required  |
-|CompanyName | String |
-|GivenName |
-|FamilyName |
-|`BillAddr` | AddressWrapper
-|EmailAddress |
-|`PrimaryEmailAddr` | PrimaryEmailAddr 
-|Phone|
-|MobileNumber|
-|`PaymentMethodRef` | value_name |
-|`SalesTermRef`  | value_name |
+|CompanyName | String | Contact/Vendor companey name|
+|GivenName | String | Contact/Vendor name|
+|FamilyName |String | contact/Vendor family name|
+|`BillAddr` | AddressWrapper | Type of BillAddr. check below for BillAddr fields|
+|EmailAddress | String | Email address of contact/vendor|
+|`PrimaryEmailAddr` | PrimaryEmailAddr | Type of PrimaryEmailAddr. check below for PrimaryEmailAddr fields|
+|Phone| String | Phone number of contact/vendor|
+|MobileNumber| String | Mobile Number of contact/vendor|
+|`PaymentMethodRef` | value_name | Type of value_name. check below for value_name fields|
+|`SalesTermRef`  | value_name | Type of value_name. check below for value_name fields|
+|`CurrencyRef` | value_name |  Type of value_name. check below for value_name fields|
 
 
 
 
 
-|AddressWrapper fields | Type|
+|AddressWrapper fields | Type| 
 |:---------------------|:-----------|
-|Line1 |
-|Line2 |
-|Line3 |
-|Line4 |
-|Line5 |
-|City |
-|CountrySubDivisionCode |
-|PostalCode |
-|Country |
+|Line1 | String | 
+|Line2 | String |
+|Line3 | String |
+|Line4 | String |
+|Line5 | String |
+|City  | String |
+|CountrySubDivisionCode | String |
+|PostalCode | String |
+|Country | String |
 
 
 
 
 |PrimaryEmailAddr  Fields | Type|
 |:------------------------|:----|
-|Address |
+|Address | String |
 
 value_name Fields | Type|
 |:----------------|:----|
-|Value |
-
-
-| DisplayName *    |
-| MiddleName | String | First name of contact person (max length = 255)                 |
-| FamilyName  | String | Last name of contact person (max length = 255)              |
-| FamilyName  | String | Email address of contact person (umlauts not supported) (max length = 255)             |
-| TaxNumber | String | Tax number of contact - this is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global) in the Xero UI depending on which regionalized version of Xero you are using (max length = 50)                |
-| AccountsReceivableTaxType      | String | Default tax type used for contact on AR invoices              |
-| `PaymentTerms`      | PaymentTermWrapper | The default payment terms for the contact - see  PaymentTermWrapper fields below             |
-| BillingAttentionTo      | String | max length = 255              |
-| BillingStreet      | String | max length = 500              |
-| BillingCity       | String | max length = 255              |
-| BillingState      | String | max length = 255              |
-| BillingCountry      | String | max length = 50, [A-Z], [a-z] only              |
-| BillingPostalCode      | String | max length = 50             |
-| Phone      |        String | Phone number of contact       |
-| ContactID      | String | Xero identifier , requries while updating            |
+|Value | String |
 

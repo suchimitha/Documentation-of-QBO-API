@@ -13,9 +13,9 @@ It is a type of string used to define the type of action that needs to be perfor
 
 <ul>
 
-<li><b>createContact</b>: Creates a QuickBooks Online Contact.</li>
-<li><b>updateContact</b>: Updates a QuickBooks Online Contact.</li>
-<li><b>fetchContacts</b>: Fetches a single QuickBooks Online Contact or a list of QuickBooks Online Contacts from QuickBooks Online.</li>
+<li><b>createCustomer</b>: Creates a QuickBooks Online Customer.</li>
+<li><b>updateCustomer</b>: Updates a QuickBooks Online Customer.</li>
+<li><b>fetchCustomer</b>: Fetches a single QuickBooks Online Customer or a list of QuickBooks Online Customers from QuickBooks Online.</li>
 <li><b>createVendor</b>: Creates a QuickBooks Online Vendor.</li>
 <li><b>updateVendort</b>: Updates a QuickBooks Online Vendor.</li>
 <li><b>fetchVendor</b>: Fetches a single QuickBooks Online Vendor or a list of QuickBooks Online Vendors from QuickBooks Online.</li>
@@ -40,13 +40,14 @@ BreadwinnerQBOAPI.RequestObject request = new BreadwinnerQBOAPI.RequestObject();
 It consists of the following variables:
 
 ### 1. qboContacts
-It is an instance of the AccountWrapper (QuickBooks online Contact Wrapper) class. To Create/Insert a QuickBooks Online Contact, we should pass the desired values to the respective variables. For available qboContacts variables, please refer [here](https://dev-qboContacts.breadwinner.com/docs/CustomerOperations) <br/>
+It is an instance of the AccountWrapper (QuickBooks online Contact Wrapper) class. To Create/Insert a QuickBooks Online Customer, we should pass the desired values to the respective variables. For available qboContacts variables, please refer [here](https://dev-qboContacts.breadwinner.com/docs/CustomerOperations) <br/>
 It is of type List. but for now we are accepting only one record.
 
 ```yaml
     List<qboapi_g1.BreadwinnerQBOAPI.AccountWrapper> qboContactList = new list<qboapi_g1.BreadwinnerQBOAPI.AccountWrapper>();
     qboapi_g1.BreadwinnerQBOAPI.AccountWrapper qboContact = new qboapi_g1.BreadwinnerQBOAPI.AccountWrapper();
     qboContact.name = 'Test Customer';
+    qboContact.DisplayName = 'Test Customer';
     qboContactList.add(qboContact);
     request.qboContacts = qboContactList;
 ```
@@ -58,7 +59,6 @@ It is of type List. but for now we are accepting only one record.
 ```yaml
     List<qboapi_g1.BreadwinnerQBOAPI.Invoice> qboInvoiceList = new list<qboapi_g1.BreadwinnerQBOAPI.Invoice>();
     qboapi_g1.BreadwinnerQBOAPI.Invoice qboInvoice = new qboapi_g1.BreadwinnerQBOAPI.Invoice();
-    qboInvoice.CustomerId = 'Test Customer'; 
     qboInvoice.description = 'desc';… 
     qboInvoiceList.add(qboInvoice);
     request.qboInvoice = qboInvoiceList;
@@ -68,10 +68,3 @@ It is of type List. but for now we are accepting only one record.
 It is a collection of type Map (Map<String, Object>), used to pass any type of filters that to be passed in the request or any config settings that we enable.
 below are the options can be used while fetching records. <br/>
     
-> <b>Contacts</b>: ContactId, ContactNumber, where, PageNumber, ModifiedAfter <br/>
-> <b>Invoices, Bills</b>: InvoiceNumber, InvoiceId, where, PageNumber, ModifiedAfter <br/>
-> <b>PurchaseOrders</b>: PurchaseOrderNumber, PurchaseOrderID, where, PageNumber, ModifiedAfter <br/>
-
-```yaml
-request.options.put('PageNumber','1');
-```

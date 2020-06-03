@@ -7,6 +7,9 @@ nav_order: 3
 
 # Fetch Customer
 
+This is under development.
+
+
 To get/fetch, the QuickBooks Online Customer pass the parameters to request.Options variable and then call the method BreadwinnerAPI.call(). Returns a map of AccountWrapper records. 
 
 ## sample code 

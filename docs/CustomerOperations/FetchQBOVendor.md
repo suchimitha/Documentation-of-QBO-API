@@ -7,6 +7,10 @@ nav_order: 7
 
 # Fetch Vendor
 
+This is under development.
+
+
+
 To get/fetch, the QuickBooks Online Vendor pass the parameters to request.Options variable and then call the method BreadwinnerAPI.call(). Returns a map of AccountWrapper records. 
 
 ## sample code 

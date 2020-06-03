@@ -6,6 +6,9 @@ nav_order: 2
 ---
 
 # Update Customer
+
+This is under development.
+
 To Update a QuickBooks Online Customer pass the values to Accountwrapper along with contactId (QuickBooks Online identifier) and assign it to request.qboContacts and then call the method BreadwinnerQBOAPI.call().
 
 ## sample code 

@@ -49,7 +49,7 @@ The following parameters are required to create or update a contact
 |:------------------------|:----|
 |Address | String |
 
-value_name Fields | Type|
+|value_name Fields | Type|
 |:----------------|:----|
 |Value | String |
 

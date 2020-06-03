@@ -16,7 +16,7 @@ try{
 	qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();	
 	List<qboapi_g1.AccountWrapper> xeroContactsList = new List<qboapi_g1.AccountWrapper>();
 	qboapi_g1.AccountWrapper xeroContact = new qboapi_g1.AccountWrapper();
-	xeroContact.name='MY5 NAME Test Create -'; 
+	xeroContact.name='Test Vendor Name -'; 
 	xeroContact.DisplayName = 'Vendor full name';
     
     qboapi_g1.AccountWrapper.AddressWrapper adwrap = new qboapi_g1.AccountWrapper.AddressWrapper();

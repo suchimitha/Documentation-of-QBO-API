@@ -7,7 +7,6 @@ nav_order: 2
 
 # Update Customer
 
-This is under development.
 
 To Update a QuickBooks Online Customer pass the values to Accountwrapper along with contactId (QuickBooks Online identifier) and assign it to request.qboContacts and then call the method BreadwinnerQBOAPI.call().
 
@@ -15,21 +14,32 @@ To Update a QuickBooks Online Customer pass the values to Accountwrapper along w
 
 ```scss
 try{
-	bw_xero_api02.BreadwinnerAPI.RequestObject req = new  bw_xero_api02.BreadwinnerAPI.RequestObject();	
-	List<bw_xero_api02.AccountWrapper> xeroContactsList = new List<bw_xero_api02.AccountWrapper>();
-	bw_xero_api02.AccountWrapper xeroContact = new bw_xero_api02.AccountWrapper();
-	xeroContact.name='MY5 NAME Test Create -'; 
-	xeroContact.contactId ='3f5873c9-0faf-4ca4-9c0d-140c59636d0e'; //Required		
-	xeroContactsList.add(xeroContact);            
-	req.xeroContact = xeroContactsList;
+	qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();	
+	List<qboapi_g1.AccountWrapper> xeroContactsList = new List<qboapi_g1.AccountWrapper>();
+	qboapi_g1.AccountWrapper xeroContact = new qboapi_g1.AccountWrapper();
+	xeroContact.name=' Contact name -'; 
+	xeroContact.DisplayName = 'Customer full name updated';
+    xeroContact.id='84';// is QuickbooksOnline Unique Contact Id
+    
+    qboapi_g1.AccountWrapper.AddressWrapper adwrap = new qboapi_g1.AccountWrapper.AddressWrapper();
+    adwrap.Line1 = '11-21-34/A';
+    adwrap.City = 'hyderabad';
+    adwrap.CountrySubDivisionCode = 'rangareddy';
+    adwrap.PostalCode = '500087';
+    adwrap.Country = 'India';
+    xeroContact.BillAddr = adwrap;
+    BreadwinnerUtil.SfAccountId = '0012w0000092ngS';
 
-	bw_xero_api02.BreadwinnerAPI.ResponseObject res =  bw_xero_api02.BreadwinnerAPI.call('updateContact', req);
+	xeroContactsList.add(xeroContact);            
+	req.qboContacts= xeroContactsList;
+
+	qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('updatecustomer', req);
 	if(res.errors.size()>0){
-		for(bw_xero_api02.BreadwinnerAPI.Error er :res.errors){
+		for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
 			System.debug(er); 
 		}
 	}
-	system.debug('created customer' +res.xeroContacts);
+	system.debug('created customer' +res.Contacts);
 }catch(Exception ex){
 	System.debug('Exception occurred while creating customers in Xero.'+ex.getStackTraceString());
 }

@@ -11,7 +11,7 @@ This is under development.
 
 
 
-To get/fetch, the QuickBooks Online Vendor pass the parameters to request.Options variable and then call the method BreadwinnerAPI.call(). Returns a map of AccountWrapper records. 
+To get/fetch, the QuickBooks Online Vendor passes the parameters to request.Options variable and then calls the method BreadwinnerAPI.call(). Returns a map of AccountWrapper records. 
 It developed to allow only 'vendor_id' (QuickBooks Online Unique Id).
 
 ## sample code 

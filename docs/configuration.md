@@ -66,5 +66,5 @@ It is of type List. but for now we are accepting only one record.
 
 ### 3. options 
 It is a collection of type Map (Map<String, Object>), used to pass any type of filters that to be passed in the request or any config settings that we enable.
-below are the options can be used while fetching records. <br/>
+below are the options that can be used while fetching records. <br/>
     

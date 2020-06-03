@@ -11,6 +11,7 @@ This is under development.
 
 
 To get/fetch, the QuickBooks Online Customer pass the parameters to request.Options variable and then call the method BreadwinnerAPI.call(). Returns a map of AccountWrapper records. 
+It developed to allow only 'customer_id' (QuickBooks Online Unique Id).
 
 ## sample code 
 
@@ -18,19 +19,19 @@ Optional parameters to fetch QuickBooks Customer(s):
 
 ```scss
 try{
-    bw_xero_api02.BreadwinnerAPI.RequestObject req = new  bw_xero_api02.BreadwinnerAPI.RequestObject();
-    req.options.put('pagenumber','1');
+    qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();   
+    req.options.put('customer_id','84');
 
-    bw_xero_api02.BreadwinnerAPI.ResponseObject res =  bw_xero_api02.BreadwinnerAPI.call('fetchContacts', req);
-        if(res.errors.size()>0){
-            for(bw_xero_api02.BreadwinnerAPI.Error er :res.errors){
-                System.debug(er); 
-            }
+    qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('fetchcustomer', req);
+    if(res.errors.size()>0){
+        for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
+            System.debug(er); 
         }
-        else{
-            system.debug('created customer' +res.xeroContacts);
-        }
+    }
+    else{
+        system.debug('created customer' +res.Contacts);
+    }
 }catch(Exception ex){
-    System.debug('Exception occurred while creating customers in Stripe.'+ex.getStackTraceString());
+    System.debug('Exception occurred while fetching customers from QuickBooksOnline.'+ex.getStackTraceString());
 }
 ```

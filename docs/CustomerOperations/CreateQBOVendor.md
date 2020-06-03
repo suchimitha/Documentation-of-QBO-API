@@ -39,6 +39,6 @@ try{
 	}
 	system.debug('created customer' +res.Contacts);
 }catch(Exception ex){
-	System.debug('Exception occurred while creating customers in Xero.'+ex.getStackTraceString());
+	System.debug('Exception occurred while creating customers in QuickBooks Online.'+ex.getStackTraceString());
 }
 ```

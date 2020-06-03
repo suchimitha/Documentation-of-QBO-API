@@ -23,13 +23,13 @@ try{
     req.options.put('customer_id','84');
 
     qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('fetchcustomer', req);
-    if(res.errors.size()>0){
+    if(res.errors!=null && Sres.errors.size()>0){
         for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
             System.debug(er); 
         }
     }
     else{
-        system.debug('created customer' +res.Contacts);
+        system.debug(' Customers ' +res.Contacts);
     }
 }catch(Exception ex){
     System.debug('Exception occurred while fetching customers from QuickBooksOnline.'+ex.getStackTraceString());

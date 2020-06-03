@@ -17,7 +17,7 @@ try{
 	qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();	
 	List<qboapi_g1.AccountWrapper> xeroContactsList = new List<qboapi_g1.AccountWrapper>();
 	qboapi_g1.AccountWrapper xeroContact = new qboapi_g1.AccountWrapper();
-	xeroContact.name=' Contact name -'; 
+	//xeroContact.name=' Contact name -'; 
 	xeroContact.DisplayName = 'Customer full name updated';
     xeroContact.id='84';// is QuickbooksOnline Unique Contact Id
     
@@ -28,18 +28,17 @@ try{
     adwrap.PostalCode = '500087';
     adwrap.Country = 'India';
     xeroContact.BillAddr = adwrap;
-    BreadwinnerUtil.SfAccountId = '0012w0000092ngS';
 
 	xeroContactsList.add(xeroContact);            
 	req.qboContacts= xeroContactsList;
 
 	qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('updatecustomer', req);
-	if(res.errors.size()>0){
+	if(res.errors!=null && res.errors.size()>0){
 		for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
 			System.debug(er); 
 		}
 	}
-	system.debug('created customer' +res.Contacts);
+	system.debug('updated customer' +res.Contacts);
 }catch(Exception ex){
 	System.debug('Exception occurred updating Customer in QuickBooks Online.'+ex.getStackTraceString());
 }

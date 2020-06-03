@@ -16,7 +16,7 @@ try{
 	qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();	
 	List<qboapi_g1.AccountWrapper> xeroContactsList = new List<qboapi_g1.AccountWrapper>();
 	qboapi_g1.AccountWrapper xeroContact = new qboapi_g1.AccountWrapper();
-	xeroContact.name='Test Vendor Name -'; 
+	//xeroContact.name='Test Vendor Name -'; 
 	xeroContact.DisplayName = 'Vendor full name updated';
     
     qboapi_g1.AccountWrapper.AddressWrapper adwrap = new qboapi_g1.AccountWrapper.AddressWrapper();
@@ -27,18 +27,17 @@ try{
     adwrap.Country = 'India';
     xeroContact.BillAddr = adwrap;
 	xeroContact.id = '85';
-    BreadwinnerUtil.SfAccountId = '0012w0000092ngS';
 
 	xeroContactsList.add(xeroContact);            
 	req.qboContacts= xeroContactsList;
 
 	qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('updatevendor', req);
-	if(res.errors.size()>0){
+	if(res.errors != null && res.errors.size()>0){
 		for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
 			System.debug(er); 
 		}
 	}
-	system.debug('created customer' +res.Contacts);
+	system.debug('updated vendor' +res.Contacts);
 }catch(Exception ex){
 	System.debug('Exception occurred while updating Vendor in QuickBooks Online.'+ex.getStackTraceString());
 }

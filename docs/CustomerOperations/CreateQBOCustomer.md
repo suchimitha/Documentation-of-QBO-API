@@ -16,7 +16,7 @@ try{
 	qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();	
 	List<qboapi_g1.AccountWrapper> xeroContactsList = new List<qboapi_g1.AccountWrapper>();
 	qboapi_g1.AccountWrapper xeroContact = new qboapi_g1.AccountWrapper();
-	xeroContact.name='Test Customer -'; 
+	//xeroContact.name='Test Customer -'; 
 	xeroContact.DisplayName = 'Customer full name';
     
     qboapi_g1.AccountWrapper.AddressWrapper adwrap = new qboapi_g1.AccountWrapper.AddressWrapper();
@@ -26,13 +26,13 @@ try{
     adwrap.PostalCode = '500087';
     adwrap.Country = 'India';
     xeroContact.BillAddr = adwrap;
-    BreadwinnerUtil.SfAccountId = '0012w0000092ngS';
+    xeroContact.AccountId = '0012w0000092ngS';
 
 	xeroContactsList.add(xeroContact);            
 	req.qboContacts= xeroContactsList;
 
 	qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('createcustomer', req);
-	if(res.errors.size()>0){
+	if(res.errors != null && res.errors.size()>0){
 		for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
 			System.debug(er); 
 		}

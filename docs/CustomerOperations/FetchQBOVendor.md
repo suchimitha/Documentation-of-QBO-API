@@ -21,16 +21,16 @@ Optional parameters to fetch QuickBooks Vendor(s):
 ```scss
 try{
     qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();   
-    req.options.put('customer_id','84');
+    req.options.put('vendor_id','84');
 
     qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('fetchVendor', req);
-    if(res.errors.size()>0){
+    if(res.errors!=null && res.errors.size()>0){
         for(qboapi_g1.BreadwinnerQBOAPI.Error er :res.errors){
             System.debug(er); 
         }
     }
     else{
-        system.debug('created customer' +res.Contacts);
+        system.debug(' Vendors ' +res.Contacts);
     }
 }catch(Exception ex){
     System.debug('Exception occurred while fetching Vendors from QuickBooksOnline.'+ex.getStackTraceString());

@@ -14,7 +14,7 @@ The following parameters are required to create or update a contact
 |Field  | Type                          | Description |
 |:----------|:-------------------------------------|
 |DisplayName * | String | Full name of contact/vendor/organisation (max length = 255), Required  |
-|CompanyName | String | Contact/Vendor companey name|
+|CompanyName | String | Contact/Vendor Company name|
 |GivenName | String | Contact/Vendor name|
 |FamilyName |String | contact/Vendor family name|
 |`BillAddr` | AddressWrapper | Type of BillAddr. check below for BillAddr fields|

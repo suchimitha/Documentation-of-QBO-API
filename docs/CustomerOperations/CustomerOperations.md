@@ -31,26 +31,26 @@ The following parameters are required to create or update a contact
 
 
 
-|AddressWrapper fields | Type| 
-|:---------------------|:-----------|
-|Line1 | String | 
-|Line2 | String |
-|Line3 | String |
-|Line4 | String |
-|Line5 | String |
-|City  | String |
-|CountrySubDivisionCode | String |
-|PostalCode | String |
-|Country | String |
+|AddressWrapper fields | Type| Description
+|:---------------------|:-----------|:------|
+|Line1 | String | Address 1 |
+|Line2 | String | Address 2 |
+|Line3 | String | Address 3, as needed | 
+|Line4 | String | Address 4, as needed |
+|Line5 | String | Address 5, as needed |
+|City  | String | City | 
+|CountrySubDivisionCode | String | Subdivision code|
+|PostalCode | String | Postal code | 
+|Country | String | Country |
 
 
 
 
 |PrimaryEmailAddr  Fields | Type|
 |:------------------------|:----|
-|Address | String |
+|Address | String | An email address. The address format must follow. |
 
 |ParentRef Fields | Type|
 |:----------------|:----|
-|value | String | 
+|value | String | The ID (QuickBooks Online Unique ID) for the referenced parent customer/vendor. |
 

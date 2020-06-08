@@ -10,23 +10,23 @@ permalink: /docs/InvoiceOperations
 
 This is under development.
 
-The following parameters are required to create or update a contact
+The following parameters are required to create or update a Invoice/Bill/PO
 
 |Field  | Type                          | Description |
 |:----------|:-------------------------------------|
 | DocNumber | String | Invoice/Bill number  |
-| `CurrencyRef` | value_name | 
-| `CustomerRef` | value_name |
+| `CurrencyRef` | value_name |Reference to the currency in which all amounts on the associated transaction are expressed.| 
+| `CustomerRef` | value_name | The ID (Unique QuickBooks Online ID) for the referenced customer/vendor|
 | GlobalTaxCalculation | String | fixed values (NotApplicable, TaxInclusive)|
-| `BillEmail` | BillEmailClass | 
-| PrivateNote | String | 
-| `CustomerMemo` | value_name |
-| `BillAddr` | AddressWrapper | 
-| TxnDate | String |
-| DueDate | String |
-| SalesTermRef | value_name | 
-| `CustomField` | CustomFieldDetails | 
-| `Line` | LineItem | 
+| `BillEmail` | BillEmailClass | Identifies the e-mail address where the invoice is sent |
+| PrivateNote | String | User entered, organization-private note about the transaction.|
+| `CustomerMemo` | value_name | User-entered message to the customer; this message is visible to end user on their transactions|
+| `BillAddr` | AddressWrapper | Identifies the e-mail address where the invoice is sent.|
+| TxnDate | String | The date entered by the user when this transaction occurred.|
+| DueDate | String | Date when the payment of the transaction is due. |
+| SalesTermRef | value_name | Reference to the sales term associated with the transaction.|
+| `CustomField` | CustomFieldDetails | One of, up to three custom fields for the transaction. Available for custom fields so configured for the company. |
+| `Line` | LineItem | Individual line items of a transaction. |
 
 
 
@@ -35,29 +35,29 @@ The following parameters are required to create or update a contact
 | Value | String |
 
 
-|BillEmailClass Fields | Type|
-|:----------------|:----|
-| Address | String |
+|BillEmailClass Fields | Type|Description|
+|:----------------|:----|:------|
+| Address | String |An email address. The address format must follow.|
 
 
-|AddressWrapper fields | Type| 
+|AddressWrapper fields | Type| Description|
 |:---------------------|:-----------|
-| Line1 | String | 
-| Line2 | String |
-| Line3 | String |
-| Line4 | String |
-| Line5 | String |
-| City  | String |
-| CountrySubDivisionCode | String |
-| PostalCode | String |
-| Country | String |
+| Line1 | String | Address 1 |
+| Line2 | String | Address 2 |
+| Line3 | String | Address 3 |
+| Line4 | String | Address 4 |
+| Line5 | String | Address 5 |
+| City  | String | City |
+| CountrySubDivisionCode | String | Subdivision code|
+| PostalCode | String | Postal code|
+| Country | String | Country|
 
 
 
 |LineItem fields | Type| 
 |:---------------------|:-----------|
 | Id | String |
-| LineNum | Integer |
+| LineNum | Integer | 
 | Amount | Decimal |
 | Description | String |
 | DetailType | String | 
@@ -68,7 +68,7 @@ The following parameters are required to create or update a contact
 | TaxInclusiveAmt | Decimal |
 
 
-|LineItem fields | Type| 
+|SalesItemLineDetail fields | Type| 
 |:---------------------|:-----------|
 | `ItemRef` | value_name |
 | `ClassRef` | value_name |

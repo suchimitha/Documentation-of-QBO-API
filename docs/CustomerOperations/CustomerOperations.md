@@ -31,7 +31,7 @@ The following parameters are required to create or update a contact
 
 
 
-|AddressWrapper fields | Type| Description
+|AddressWrapper fields | Type| Description|
 |:---------------------|:-----------|:------|
 |Line1 | String | Address 1 |
 |Line2 | String | Address 2 |
@@ -46,8 +46,8 @@ The following parameters are required to create or update a contact
 
 
 
-|PrimaryEmailAddr  Fields | Type|
-|:------------------------|:----|
+|PrimaryEmailAddr  Fields | Type|Description|
+|:------------------------|:----|:----------|
 |Address | String | An email address. The address format must follow. |
 
 |ParentRef Fields | Type|

@@ -13,18 +13,19 @@ The following parameters are required to create or update a contact
 
 |Field  | Type                          | Description |
 |:----------|:-------------------------------------|
-|DisplayName * | String | Full name of contact/vendor/organisation (max length = 255), Required  |
+|DisplayName * | String | The name of the person or organization as displayed. Must be unique across all Customer and Vendor (max length = 255), Required  |
 |CompanyName | String | Contact/Vendor Company name|
-|GivenName | String | Contact/Vendor name|
-|FamilyName |String | Contact/Vendor family name|
+|GivenName | String | Given name or first name of a person.|
+|FamilyName |String | Family name or the last name of the person.|
 |`BillAddr` | AddressWrapper | Type of BillAddr. check below for BillAddr fields|
 |EmailAddress | String | Email address of contact/vendor|
-|`PrimaryEmailAddr` | PrimaryEmailAddr | Type of PrimaryEmailAddr. check below for PrimaryEmailAddr fields|
+|`PrimaryEmailAddr` | PrimaryEmailAddr | EmailAddress, Type of PrimaryEmailAddr. check below for PrimaryEmailAddr fields|
 |Phone| String | Phone number of contact/vendor|
 |MobileNumber| String | Mobile Number of contact/vendor|
 |`PaymentMethodRef` | value_name | Type of value_name. check below for value_name fields|
-|`SalesTermRef`  | value_name | Type of value_name. check below for value_name fields|
-|`CurrencyRef` | value_name |  Type of value_name. check below for value_name fields|
+|`SalesTermRef`  | value_name | Reference to a SalesTerm associated with this Customer object. It is a type of value_name. check below for value_name fields|
+|`CurrencyRef` | value_name |  Reference to the currency in which all amounts associated with this customer are expressed. Once set, it cannot be changed. It is a type of value_name. check below for value_name fields|
+|`ParentRef`| ParentRef | A reference to a Customer object that is the immediate parent of the Sub-Customer/Job in the hierarchical Customer:Job list. Required for the create operation if this object is a sub-customer |
 
 
 
@@ -49,7 +50,7 @@ The following parameters are required to create or update a contact
 |:------------------------|:----|
 |Address | String |
 
-|value_name Fields | Type|
+|ParentRef Fields | Type|
 |:----------------|:----|
-|Value | String |
+|value | String | 
 

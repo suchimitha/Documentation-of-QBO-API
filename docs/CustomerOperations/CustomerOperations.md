@@ -1,3 +1,4 @@
+```scss
 ---
 layout: default
 title: Contact Operations
@@ -5,7 +6,6 @@ nav_order: 5
 has_children: true
 permalink: docs/CustomerOperations
 ---
-```scss
 
 # Contact Operations
 

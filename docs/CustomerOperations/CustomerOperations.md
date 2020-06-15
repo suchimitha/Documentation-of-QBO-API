@@ -1,4 +1,3 @@
-```scss
 ---
 layout: default
 title: Contact Operations
@@ -55,4 +54,3 @@ The following parameters are required to create or update a contact
 |:----------------|:----|
 |value | String | The ID (QuickBooks Online Unique ID) for the referenced parent customer/vendor. |
 
-```

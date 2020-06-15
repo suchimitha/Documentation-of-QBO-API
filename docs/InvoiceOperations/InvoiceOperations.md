@@ -22,8 +22,8 @@ The following parameters are required to create or update a Invoice/Bill/PO
 | PrivateNote | String | User entered, organization-private note about the transaction.|
 | `CustomerMemo` | value_name | User-entered message to the customer; this message is visible to end user on their transactions|
 | `BillAddr` | AddressWrapper | Identifies the e-mail address where the invoice is sent.|
-| TxnDate | String | The date entered by the user when this transaction occurred.|
-| DueDate | String | Date when the payment of the transaction is due. |
+| TxnDate | String | The date entered by the user when this transaction occurred. (add by converting date to string)|
+| DueDate | String | Date when the payment of the transaction is due. (add by converting date to string)|
 | SalesTermRef | value_name | Reference to the sales term associated with the transaction.|
 | `CustomField` | CustomFieldDetails | One of, up to three custom fields for the transaction. Available for custom fields so configured for the company. |
 | `Line` | LineItem | Individual line items of a transaction. |
@@ -42,11 +42,11 @@ The following parameters are required to create or update a Invoice/Bill/PO
 
 |AddressWrapper fields | Type| Description|
 |:---------------------|:-----------|
-| Line1 | String | Address 1 |
-| Line2 | String | Address 2 |
-| Line3 | String | Address 3 |
-| Line4 | String | Address 4 |
-| Line5 | String | Address 5 |
+| Line1 | String | First line of the address |
+| Line2 | String | Second line of the address |
+| Line3 | String | Third line of the address |
+| Line4 | String | Fourth line of the address |
+| Line5 | String | Fifth line of the address |
 | City  | String | City |
 | CountrySubDivisionCode | String | Subdivision code|
 | PostalCode | String | Postal code|

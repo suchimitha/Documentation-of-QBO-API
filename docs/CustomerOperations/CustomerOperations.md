@@ -11,8 +11,6 @@ permalink: docs/CustomerOperations
 
 The following parameters are required to create or update a contact
 
-
-```markdown
 |Field  | Type                          | Description |
 |:----------|:-------------------------------------|
 |DisplayName * | String | The name of the person or organization as displayed. Must be unique across all Customer and Vendor (max length = 255), Required  |
@@ -28,11 +26,11 @@ The following parameters are required to create or update a contact
 |`SalesTermRef`  | value_name | Reference to a SalesTerm associated with this Customer object. It is a type of value_name. check below for value_name fields|
 |`CurrencyRef` | value_name |  Reference to the currency in which all amounts associated with this customer are expressed. Once set, it cannot be changed. It is a type of value_name. check below for value_name fields|
 |`ParentRef`| ParentRef | A reference to a Customer object that is the immediate parent of the Sub-Customer/Job in the hierarchical Customer:Job list. Required for the create operation if this object is a sub-customer |
-```
 
 
 
-```markdown
+
+
 |AddressWrapper fields | Type| Description|
 |:---------------------|:-----------|:------|
 |Line1 | String | Address 1 |
@@ -44,17 +42,15 @@ The following parameters are required to create or update a contact
 |CountrySubDivisionCode | String | Subdivision code|
 |PostalCode | String | Postal code | 
 |Country | String | Country |
-```
 
 
-```markdown
+
+
 |PrimaryEmailAddr  Fields | Type|Description|
 |:------------------------|:----|:----------|
 |Address | String | An email address. The address format must follow. |
-```
 
-```markdown
 |ParentRef Fields | Type|
 |:----------------|:----|
 |value | String | The ID (QuickBooks Online Unique ID) for the referenced parent customer/vendor. |
-```
+

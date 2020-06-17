@@ -30,7 +30,7 @@ This is a global class where you can access RequestObject and ResponseObject.
 ## BreadwinnerQBOAPI Methods
 The following are instance methods for <i>BreadwinnerQBOAPI</i>.
 - <b>Call()</b><br/>
-This is a global method which will return a list of Customers or Invoices in the form of [BreadwinnerAPI.ResponseObject]({{ site.baseurl }}{% link docs/response.md %}). It takes two parameters.
+This is a global method which will return a list of Customers or Invoices in the form of [BreadwinnerQBOAPI.ResponseObject]({{ site.baseurl }}{% link docs/response.md %}). It takes two parameters.
 
 > 1. <b>Action</b>: Used to define the type of action that needs to be performed.<br/>
 E.g : createContact, createVendor,… see [List of actions]({{ site.baseurl }}{% link docs/configuration.md %})
@@ -41,9 +41,9 @@ E.g :  BreadwinnerQBOAPI.RequestObject request = new BreadwinnerQBOAPI.RequestOb
 Note: This is a synchronous method, it will make http callouts. So, to access "BreadwinnerQBOAPI.Call()" method please enable callouts by annotating the future method, or use Queueable Apex.<br/>
 eg: @Future(callout=true) 
 ### Signature
-BreadwinnerAPI.ResponseObject call(String Action, BreadwinnerAPI.RequestObject request)
+BreadwinnerQBOAPI.ResponseObject call(String Action, BreadwinnerQBOAPI.RequestObject request)
 
-### BreadwinnerAPI inner classes
+### BreadwinnerQBOAPI inner classes
 
 > - RequestObject - Class
 > - ResponseObject - Class

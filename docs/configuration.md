@@ -40,7 +40,7 @@ BreadwinnerQBOAPI.RequestObject request = new BreadwinnerQBOAPI.RequestObject();
 It consists of the following variables:
 
 ### 1. qboContacts
-It is an instance of the AccountWrapper (QuickBooks online Contact Wrapper) class. To Create/Insert a QuickBooks Online Customer, we should pass the desired values to the respective variables. For available qboContacts variables, please refer [here](https://dev-qboContacts.breadwinner.com/docs/CustomerOperations) <br/>
+It is an instance of the AccountWrapper (QuickBooks online Contact Wrapper) class. To Create/Insert a QuickBooks Online Customer, we should pass the desired values to the respective variables. For available qboContacts variables, please refer [here](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/account#create-an-account) <br/>
 It is of type List. but for now we are accepting only one record.
 
 ```yaml
@@ -53,7 +53,7 @@ It is of type List. but for now we are accepting only one record.
 ```
 
 ### 2. qboInvoices
-It is an instance of the Invoicewrapper class. To Create/Insert Invoice we should pass desired values to variables. For all Invoice variables you can refer [here](https://dev-qbo.breadwinner.com/docs/InvoiceOperations) <br/>
+It is an instance of the Invoicewrapper class. To Create/Insert Invoice we should pass desired values to variables. For all Invoice variables you can refer [here](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/invoice#create-an-invoice) <br/>
 It is of type List. but for now we are accepting only one record.
 
 ```yaml

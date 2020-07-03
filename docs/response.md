@@ -16,7 +16,7 @@ When we call “BreadwinnerQBOAPI.call()” method, User would get the response 
 ### Status: 
 It is of type String, which represents the Response/Status code of the request returned by QuickBooks Online. <br/>
 E.g: ‘200’ - OK (Successful API call) <br/>
-Click [here](https://developer.qbo.com/documentation/api/http-response-codes) for more Status codes, and it's descriptions.
+Click [here](https://developer.intuit.com/app/developer/qbo/docs/develop/troubleshooting/error-codes#http-status-codes) for more Status codes, and it's descriptions.
 
 ### Contacts
 It is of type List<AccountWrapper>, which contains the created QuickBooks Online Contact(s) data along with QuickBooks Online unique record Id.<br/> 

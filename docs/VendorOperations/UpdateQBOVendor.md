@@ -2,7 +2,7 @@
 layout: default
 title: Update Vendor
 parent: Vendor Operations
-nav_order: 8
+nav_order: 2
 ---
 
 # Update Vendor

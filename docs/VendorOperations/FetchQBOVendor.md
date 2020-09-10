@@ -2,7 +2,7 @@
 layout: default
 title: Fetch Vendor
 parent: Vendor Operations
-nav_order: 7
+nav_order: 3
 ---
 
 # Fetch Vendor

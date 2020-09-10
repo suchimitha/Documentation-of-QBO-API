@@ -15,7 +15,7 @@ permalink: /
 ## Introduction
 
 
-Breadwinner for NetSuite Global API is part of the Breadwinner for Netsuite managed package. A Global class is exposed as an API to allow our Breadwinner for NetSuite customers to make calls to NetSuite via Breadwinner, in addition to the Breadwinner’s functionality.
+Breadwinner for QuickBooks Online Global API is part of the Breadwinner for QuickBooks Online managed package. A Global class is exposed as an API to allow our Breadwinner for QuickBooks Online customers to make calls to NetSuite via Breadwinner, in addition to the Breadwinner’s functionality.
 
 ## BreadwinnerQBOAPI Class 
 BreadwinnerQBOAPI is a global class that can be used to make requests to QuickBooks via Breadwinner. As it is a part of the managed package, you must prepend the namespace "qboapi_g1"

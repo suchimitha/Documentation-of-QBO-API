@@ -10,37 +10,46 @@ nav_order: 2
 This method allows users to retrieve the data of a Quickbooks online Contact/Vendor/Invoice/Bill/PurchaseOrder.
 
 
-### ResponseObject - Class
-When we call “BreadwinnerQBOAPI.call()” method, User would get the response in the form of BreadwinnerQBOAPI.ResponseObject. It consists of the following variables.<br/>
+### Response
+As mentioned earlier, the Response will be returned in the form of Map<String, Object>.
 
-### Status: 
-It is of type String, which represents the Response/Status code of the request returned by QuickBooks Online. <br/>
-E.g: ‘200’ - OK (Successful API call) <br/>
-Click [here](https://developer.intuit.com/app/developer/qbo/docs/develop/troubleshooting/error-codes#http-status-codes) for more Status codes, and it's descriptions.
 
-### Contacts
-It is of type List<AccountWrapper>, which contains the created QuickBooks Online Contact(s) data along with QuickBooks Online unique record Id.<br/> 
-```yaml
-List<qboapi_g1.AccountWrapper> qboContactsList = Response.Contacts
-```
+Below are the list of Keys or Parameters returned in the Response Map:
 
-### Invoices
-It is of type List<Invoice>, which contains the created QuickBooks Online Invoice(s) data along with QuickBooks Online unique record Id.<br/>
-```yaml
-List<qboapi_g1.Invoice> qboInvoices = Response.Invoices
-```
+|Key (String)|Value (Object)|Additional Detail|
+|:-----------|:-------------|:----------------|
+|version|1.0’ |Returns the same version sent in the Request|
+|action|See the list of available actions.|Returns the same action sent in the Request.|
+|timestamp|Timestamp in milliseconds (Unix).|The time at which the Response was returned, can be used to troubleshoot.|
+|validRequest|Either true or false.|If the Request satisfies the Breadwinner validations, it will be returned as true.|
+|apiErrors|This will be a list of Errors returned as JSON.|Errors which Breadwinner gets while validating the request and before making the request to NetSuite.|
+|responseJSON|Returns the response of the record(s) as a JSON string.|This includes the records data as well as the NetSuite Errors.Click here to see the examples.|
+
+
+
+
+
 
 ### Errors
-It is of type “BreadwinnerQBOAPI.Error” class. All the Errors that are reported by QuickBooks Online or by Salesforce.
+There can be some exceptions within Breadwinner and QuickBooks Online may throw some errors as part of our API actions and those errors are returned in separate layers in the form of JSON.
 
-Error class contains the following variables:
-<ul>
-<li><b>type</b>: The type of error returned. One of api_connection_error, api_error, authentication_error, idempotency_error, invalid_request_error, rate_limit_error, validation_exception. e.t.c.,</li>
-<li><b>message</b>: Represents the Error.</li>
-<li><b>code</b>: For some errors that could be handled programmatically, a short string indicating the error code reported.</li>
-<li><b>Detail</b>: Represents the extra info regarding the error or exception.</li>
-</ul>
+## Before requesting QuickBooks Online
+Errors occurred while validating the request, or while making a request to QuickBooks Online are returned as ‘apiErrors’, when these exceptions are there validRequest key will be sent as false.
 
-```yaml
-message=REQUIRED_FIELD_MISSING: name, message=Enter the QuickBooks Online customer name. param=qboContacts[0].name
-```
+These errors are returned as ‘apiErrors’ as a key of the Response map, and apiErrors is a list of Error objects. 
+
+## After requesting QuickBooks Online
+Errors occurred within QuickBooks Online while processing the request, or while processing the data in Breadwinner are sent as ‘errors’ in the responseJSON key of the Response map.
+
+These errors are returned as ‘errors’  in the responseJSON which is a key of the Response map, and errors is a list of Error objects. 
+
+## Error Object
+Error object contains two String parameters
+
+
+|Field Name|Data Type|Description|
+|:---------|:--------|:----------|
+|type | String |Code is a short form or type of the Error occurred. Example: INVALID_ACTION|
+|message | String |A detailed explanation of the Error occurred. Example: Breadwinner was unable to process the request as the action parameter was invalid.|
+|code | String | For some errors that could be handled programmatically, a short string indicating the error code reported.|
+|Detail | String | Represents the extra info regarding the error or exception.|

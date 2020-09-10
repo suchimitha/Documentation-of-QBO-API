@@ -13,30 +13,27 @@ permalink: /
 ---
 
 ## Introduction
-Breadwinner global API used to make request to QuickBooks Online. Request & responses are defined in such a way that you can make use of them and form the required things for the request and also to handle the response.
 
-We have created two Handlers, one is for Request and another is for Response. They are named as RequestObject and ResponseObject respectively.
 
-Currently, we are providing API to create, update and fetch QuickBooks Online Customers, Vendors from Salesforce to QuickBooks Online.
-
-Breadwinner Provides Apex classes and methods. Users can use these, in their own custom Apex code to perform their needs. The following are the class and methods.
+Breadwinner for NetSuite Global API is part of the Breadwinner for Netsuite managed package. A Global class is exposed as an API to allow our Breadwinner for NetSuite customers to make calls to NetSuite via Breadwinner, in addition to the Breadwinner’s functionality.
 
 ## BreadwinnerQBOAPI Class 
-This is a global class where you can access RequestObject and ResponseObject.
+BreadwinnerQBOAPI is a global class that can be used to make requests to QuickBooks via Breadwinner. As it is a part of the managed package, you must prepend the namespace "qboapi_g1"
 
-### Namespace
-"qboapi_g1" : Use this namespace to access <i>BreadwinnerQBOAPI</i> class and methods. 
 
-## BreadwinnerQBOAPI Methods
-The following are instance methods for <i>BreadwinnerQBOAPI</i>.
-- <b>Call()</b><br/>
-This is a global method which will return a list of Customers or Invoices in the form of [BreadwinnerQBOAPI.ResponseObject](https://dev-qbo.breadwinner.com/docs/response/). It takes two parameters.
+## Methods
 
-> 1. <b>Action</b>: Used to define the type of action that needs to be performed.<br/>
-E.g : createContact, createVendor,… see [List of available actions](https://dev-qbo.breadwinner.com/docs/configuration/)
+A method call(Map<String, Object> request) is a static global method within the BreadwinnerQBOAPI class, which can be used to make an API request.
 
->  2. <b>Request</b>: An instance of [RequestObject](https://dev-qbo.breadwinner.com/docs/configuration/) is accepted.<br/>
-E.g :  BreadwinnerQBOAPI.RequestObject request = new BreadwinnerQBOAPI.RequestObject();
+```yaml
+
+qboapi_g1.BreadwinnerQBOAPI.call(Map<String, Object> request);
+
+```
+
+Breadwinner accepts the request data in the form of Map<String, Object>, and even returns the response data as a  Map<String, Object>, thus making the requests and responses dynamic.
+
+For more information, please refer to the Sample [Requests](https://dev-qbo.breadwinner.com/docs/configuration/) and [Responses](https://dev-qbo.breadwinner.com/docs/response/) section.
 
 Note: This is a synchronous method, it will make http callouts. So, to access "BreadwinnerQBOAPI.Call()" method please enable callouts by annotating the future method, or use Queueable Apex.<br/>
 eg: @Future(callout=true) 

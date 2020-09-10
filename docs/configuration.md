@@ -9,62 +9,46 @@ nav_order: 2
 
 
 ## Actions
-It is a type of string used to define the type of action that needs to be performed. It generally accepts the following types of actions.
+Below are the supported actions which can be processed using Breadwinner for QBO Global API.
 
 <ul>
 
 <li><b>createCustomer</b>: Creates a QuickBooks Online Customer.</li>
 <li><b>updateCustomer</b>: Updates a QuickBooks Online Customer.</li>
-<li><b>fetchCustomer</b>: Fetches a single QuickBooks Online Customer or a list of QuickBooks Online Customers from QuickBooks Online.</li>
+<li><b>readCustomer</b>: Fetches a single QuickBooks Online Customer or a list of QuickBooks Online Customers from QuickBooks Online.</li>
 <li><b>createVendor</b>: Creates a QuickBooks Online Vendor.</li>
 <li><b>updateVendort</b>: Updates a QuickBooks Online Vendor.</li>
-<li><b>fetchVendor</b>: Fetches a single QuickBooks Online Vendor or a list of QuickBooks Online Vendors from QuickBooks Online.</li>
+<li><b>readVendor</b>: Fetches a single QuickBooks Online Vendor or a list of QuickBooks Online Vendors from QuickBooks Online.</li>
 <li><b>createInvoice</b>: Creates an Invoice in QuickBooks Online.</li>
 <li><b>updateInvoice</b>: Updates in Invoice in QuickBooks Online.</li>
-<li><b>fetchInvoices</b>: Fetches either a single Invoice or list of Invoices from QuickBooks Online.</li>
+<li><b>readInvoices</b>: Fetches either a single Invoice or list of Invoices from QuickBooks Online.</li>
 <li><b>createBill</b>: Creates a Bill in QuickBooks Online.</li>
 <li><b>updateBill</b>: Updates a Bill in QuickBooks Online.</li>
-<li><b>fetchBills</b>: Fetches either a single Bill or list of Bills from QuickBooks Online.</li>
+<li><b>readBills</b>: Fetches either a single Bill or list of Bills from QuickBooks Online.</li>
 <li><b>createPurchaseOrder</b>: Creates a Purchase Order (PO) in QuickBooks Online.</li>
 <li><b>updatePurchaseOrder</b>: Updates a Purchase Order (PO) in QuickBooks Online.</li>
-<li><b>fetchPurchaseOrders</b>: Fetches either a single Purchase Order or a list of Purchase Orders from QuickBooks Online.</li>
+<li><b>readPurchaseOrders</b>: Fetches either a single Purchase Order or a list of Purchase Orders from QuickBooks Online.</li>
+<li><b>createSalesReceipt</b>: Creates a Sales Receipt in QuickBooks Online.</li>
+<li><b>updateSalesReceipt</b>: Updates a Sales Receipt in QuickBooks Online.</li>
+<li><b>readSalesReceipt</b>: Fetches either a single Sales Receipt or a list of Sales Receipts from QuickBooks Online.</li>
+<li><b>createCreditMemo</b>: Creates a Credit Memo in QuickBooks Online.</li>
+<li><b>updateCreditMemo</b>: Updates a Credit Memo in QuickBooks Online.</li>
+<li><b>readCreditMemo</b>: Fetches either a single Credit Memo or a list of Credit Memos from QuickBooks Online.</li>
 
 </ul>
 
-## RequestObject - Class
-You have to create an Instance for RequestObject and pass to the "BreadwinnerQBOAPI.call()” method as one of the parameters. <br/>
-```yaml
-BreadwinnerQBOAPI.RequestObject request = new BreadwinnerQBOAPI.RequestObject(); 
-```
+As of now, Breadwinner supports only the above mentioned actions. More actions will be included in upcoming releases.
 
-It consists of the following variables:
+## Request
 
-### 1. qboContacts
-It is an instance of the AccountWrapper (QuickBooks online Contact Wrapper) class. To Create/Insert a QuickBooks Online Customer, we should pass the desired values to the respective variables. For available qboContacts variables, please refer [here](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/account#create-an-account) <br/>
-It is of type List. but for now we are accepting only one record.
+As mentioned earlier, Breadwinner accepts the Request data in the form of a Map<String, Object>.
 
-```yaml
-    List<qboapi_g1.BreadwinnerQBOAPI.AccountWrapper> qboContactList = new list<qboapi_g1.BreadwinnerQBOAPI.AccountWrapper>();
-    qboapi_g1.BreadwinnerQBOAPI.AccountWrapper qboContact = new qboapi_g1.BreadwinnerQBOAPI.AccountWrapper();
-    qboContact.name = 'Test Customer';
-    qboContact.DisplayName = 'Test Customer';
-    qboContactList.add(qboContact);
-    request.qboContacts = qboContactList;
-```
+These are the supported keys: 
 
-### 2. qboInvoices
-It is an instance of the Invoicewrapper class. To Create/Insert Invoice we should pass desired values to variables. For all Invoice variables you can refer [here](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/invoice#create-an-invoice) <br/>
-It is of type List. but for now we are accepting only one record.
+|Key (String) | Value (Object) | Required |
+|:------------|:---------------|:---------|
+|version|‘1.0’ |True|
+|action|See the list of available actions.|True|
+|requestJSON|Pass the data as a JSON string, based on the specified action.|True|
 
-```yaml
-    List<qboapi_g1.BreadwinnerQBOAPI.Invoice> qboInvoiceList = new list<qboapi_g1.BreadwinnerQBOAPI.Invoice>();
-    qboapi_g1.BreadwinnerQBOAPI.Invoice qboInvoice = new qboapi_g1.BreadwinnerQBOAPI.Invoice();
-    qboInvoice.description = 'desc';… 
-    qboInvoiceList.add(qboInvoice);
-    request.qboInvoice = qboInvoiceList;
-```
 
-### 3. options 
-It is a collection of type Map (Map<String, Object>), used to pass any type of filters that to be passed in the request or any config settings that we enable.
-below are the options that can be used while fetching records. <br/>
-    

@@ -10,23 +10,41 @@ permalink: /docs/SalesReceiptOperations
 
 This is under development.
 
-The following parameters are required to create or update a Invoice/Bill/PO
+Sales Receipt object contains two String parameters
 
-|Field  | Type                          | Description |
+
+Field  | Type                          | Description |
 |:----------|:-------------------------------------|
 | DocNumber | String | Invoice/Bill number  |
-| `CurrencyRef` | value_name |Reference to the currency in which all amounts on the associated transaction are expressed.| 
-| `CustomerRef` | value_name | The ID (Unique QuickBooks Online ID) for the referenced customer/vendor|
+| CurrencyRef | `value_name` |Reference to the currency in which all amounts on the associated transaction are expressed.| 
+| CustomerRef | `value_name` | The ID (Unique QuickBooks Online ID) for the referenced customer/vendor|
 | GlobalTaxCalculation | String | fixed values (NotApplicable, TaxInclusive)|
-| `BillEmail` | BillEmailClass | Identifies the e-mail address where the invoice is sent |
+| BillEmail | `BillEmailClass` | Identifies the e-mail address where the invoice is sent |
 | PrivateNote | String | User entered, organization-private note about the transaction.|
-| `CustomerMemo` | value_name | User-entered message to the customer; this message is visible to end user on their transactions|
-| `BillAddr` | AddressWrapper | Identifies the e-mail address where the invoice is sent.|
+| CustomerMemo | `value_name` | User-entered message to the customer; this message is visible to end user on their transactions|
+| BillAddr | `AddressWrapper` | Identifies the e-mail address where the invoice is sent.|
 | TxnDate | String | The date entered by the user when this transaction occurred. (add by converting date to string)|
-| DueDate | String | Date when the payment of the transaction is due. (add by converting date to string)|
-| SalesTermRef | value_name | Reference to the sales term associated with the transaction.|
-| `CustomField` | CustomFieldDetails | One of, up to three custom fields for the transaction. Available for custom fields so configured for the company. |
-| `Line` | LineItem | Individual line items of a transaction. |
+| CustomField | `CustomFieldDetails` | One of, up to three custom fields for the transaction. Available for custom fields so configured for the company. |
+| Line | `LineItem` | Individual line items of a transaction. |
+|PaymentMethodRef| `value_name`| |
+|PaymentRefNum | String| |
+
+|SyncToken| String | Version number of the object. It is used to lock an object for use by one app at a time. Read Only|
+|TxnTaxDetail| `TxnTaxDetail` | This data type provides information for taxes charged on the transaction as a whole. |
+|TotalAmt| Decimal| Indicates the total amount of the transaction. This includes the total of all the charges, allowances, and taxes. Read Only|
+|HomeBalance | Decimal | Read Only|
+|Balance| Decimal | The balance reflecting any payments made against the transaction. Read Only|
+|EmailStatus| Sring| Email status of the invoice. Valid values: NotSet, NeedToSend, EmailSent.|
+|MetaData| `MetaData`| Descriptive information about the object. The MetaData values are set by Data Services and are read only|
+|ShipAddr| `AddressWrapper` | Identifies the address where the goods must be shipped.|
+|ShipMethodRef| `value_name` | Reference to the ShipMethod associated with the transaction. |
+|ShipDate| String | Date for delivery of goods or services.|
+|TrackingNum| String | Shipping provider's tracking number for the delivery of the goods associated with the transaction.| 
+|Type| String | |
+|ClassRef| `value_name`| Reference to the Class associated with the transaction.|
+|DepositToAccountRef| `value_name` | Account to which money is deposited.| 
+|DiscountLineDetail| `DiscountDetails`| | 
+|ExchangeRate| Decimal | The number of home currency units it takes to equal one unit of currency specified by CurrencyRef.| 
 
 
 
@@ -52,6 +70,12 @@ The following parameters are required to create or update a Invoice/Bill/PO
 | PostalCode | String | Postal code|
 | Country | String | Country|
 
+|CustomFieldDetails fields | Type| 
+|:---------------------|:-----------|
+| DefinitionId | String |
+| Name | String |
+| Type | String |
+| StringValue | String |
 
 
 |LineItem fields | Type| 
@@ -78,11 +102,11 @@ The following parameters are required to create or update a Invoice/Bill/PO
 | ServiceDate | String | 
 
 
-
-|CustomFieldDetails fields | Type| 
+|TxnTaxDetail fields | Type| 
 |:---------------------|:-----------|
-| DefinitionId | String |
-| Name | String |
-| Type | String |
-| StringValue | String |
+| `TxnTaxCodeRef` | value_name |
+| TotalTax | decimal |
+| TaxLine | List<`TaxLine`	> | 
+
+
 	

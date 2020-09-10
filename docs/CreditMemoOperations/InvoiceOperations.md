@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Invoice Operations
-nav_order: 3
+nav_order: 5
 has_children: true
 permalink: /docs/InvoiceOperations
 ---
@@ -10,44 +10,23 @@ permalink: /docs/InvoiceOperations
 
 This is under development.
 
-The Invoice object has the following parameters. 
+The following parameters are required to create or update a Invoice/Bill/PO
 
 |Field  | Type                          | Description |
 |:----------|:-------------------------------------|
 | DocNumber | String | Invoice/Bill number  |
-| CurrencyRef | `value_name` |Reference to the currency in which all amounts on the associated transaction are expressed.| 
-| CustomerRef | `value_name` | The ID (Unique QuickBooks Online ID) for the referenced customer/vendor|
+| `CurrencyRef` | value_name |Reference to the currency in which all amounts on the associated transaction are expressed.| 
+| `CustomerRef` | value_name | The ID (Unique QuickBooks Online ID) for the referenced customer/vendor|
 | GlobalTaxCalculation | String | fixed values (NotApplicable, TaxInclusive)|
-| BillEmail | `BillEmailClass` | Identifies the e-mail address where the invoice is sent |
+| `BillEmail` | BillEmailClass | Identifies the e-mail address where the invoice is sent |
 | PrivateNote | String | User entered, organization-private note about the transaction.|
-| CustomerMemo | `value_name` | User-entered message to the customer; this message is visible to end user on their transactions|
-| BillAddr | `AddressWrapper` | Identifies the e-mail address where the invoice is sent.|
+| `CustomerMemo` | value_name | User-entered message to the customer; this message is visible to end user on their transactions|
+| `BillAddr` | AddressWrapper | Identifies the e-mail address where the invoice is sent.|
 | TxnDate | String | The date entered by the user when this transaction occurred. (add by converting date to string)|
 | DueDate | String | Date when the payment of the transaction is due. (add by converting date to string)|
 | SalesTermRef | value_name | Reference to the sales term associated with the transaction.|
-| CustomField | `CustomFieldDetails` | One of, up to three custom fields for the transaction. Available for custom fields so configured for the company. |
-| Line | `LineItem` | Individual line items of a transaction. |
-
-|SyncToken| String | Read Only|
-|TxnTaxDetail| `TxnTaxDetail` | |
-|TotalAmt| Decimal| Read Only|
-|HomeBalance | Decimal | Read Only|
-|Balance| Decimal | Read Only|
-|EmailStatus| Sring| |
-|MetaData| `MetaData`| Read Only|
-|ShipAddr| `AddressWrapper` | |
-|ShipMethodRef| `value_name` | |
-|ShipDate| String | |
-|TrackingNum| String | | 
-|Type| String | |
-|ClassRef| `value_name`| |
-|DepositToAccountRef| `value_name` | | 
-|DiscountLineDetail| `DiscountDetails`| | 
-|ExchangeRate| Decimal | | 
-
-
-
-
+| `CustomField` | CustomFieldDetails | One of, up to three custom fields for the transaction. Available for custom fields so configured for the company. |
+| `Line` | LineItem | Individual line items of a transaction. |
 
 
 

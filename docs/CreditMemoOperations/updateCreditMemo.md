@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Update Invoice
-parent: Invoice Operations
+title: Update Credit Memo
+parent: Credit Memo Operations
 nav_order: 2
 ---
 
-# Update Invoice
+# Update Credit Memo
 
 This is under development.

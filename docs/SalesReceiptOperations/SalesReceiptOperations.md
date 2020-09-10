@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Invoice Operations
+title: Sales Receipt Operations
 nav_order: 4
 has_children: true
-permalink: /docs/InvoiceOperations
+permalink: /docs/SalesReceiptOperations
 ---
 
-# Invoice Operations
+# Sales Receipt Operations
 
 This is under development.
 

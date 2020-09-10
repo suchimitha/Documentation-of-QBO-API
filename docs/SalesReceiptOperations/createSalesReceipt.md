@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Create Invoice
-parent: Invoice Operations
+title: Create Sales Receipt
+parent: Sales Receipt Operations
 nav_order: 1
 ---
 
-# Create Invoice
+# Create Sales Receipt
 
 
 This is under development.

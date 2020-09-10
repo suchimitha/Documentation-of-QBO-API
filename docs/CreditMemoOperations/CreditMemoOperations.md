@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Invoice Operations
+title: Credit Memo Operations
 nav_order: 5
 has_children: true
-permalink: /docs/InvoiceOperations
+permalink: /docs/CreditMemoOperat ions
 ---
 
-# Invoice Operations
+# Credit Memo Operations
 
 This is under development.
 

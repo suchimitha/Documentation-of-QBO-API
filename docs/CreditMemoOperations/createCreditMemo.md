@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Create Invoice
-parent: Invoice Operations
+title: Create Credit Memo
+parent: Credit Memo Operations
 nav_order: 1
 ---
 
-# Create Invoice
+# Create Credit Memo
 
 
 This is under development.

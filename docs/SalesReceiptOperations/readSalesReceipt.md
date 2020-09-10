@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Fetch Invoices
-parent: Invoice Operations
+title: Read Sales Receipt
+parent: Sales Receipt Operations
 nav_order: 3
 ---
 
-# Fetch Invoices
+# Read Sales Receipt
 
 This is under development.

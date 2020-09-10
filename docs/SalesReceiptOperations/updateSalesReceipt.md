@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Update Invoice
-parent: Invoice Operations
+title: Update Sales Receipt
+parent: Sales Receipt Operations
 nav_order: 2
 ---
 
-# Update Invoice
+# Update Sales Receipt
 
 This is under development.

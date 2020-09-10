@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Fetch Customer
+title: Read Customer
 parent: Customer Operations
 nav_order: 3
 ---
 
-# Fetch Customer
+# Read Customer
 
 This is under development.
 

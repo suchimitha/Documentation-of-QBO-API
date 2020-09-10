@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Fetch Vendor
+title: Read Vendor
 parent: Vendor Operations
 nav_order: 3
 ---
 
-# Fetch Vendor
+# Read Vendor
 
 This is under development.
 

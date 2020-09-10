@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Fetch Purchase Orders
+title: Read Purchase Orders
 parent: Invoice Operations
 nav_order: 9
 ---
 
-# Fetch Purchase Orders
+# Read Purchase Orders
 
 This is under development.

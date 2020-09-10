@@ -14,7 +14,7 @@ TSales Receipt object contains two String parameters
 
 
 Field  | Type                          | Description |
-|:----------|:-------------------------------------|
+|:----------|:--------------------------|:-----------|
 | DocNumber | String | Invoice/Bill number  |
 | CurrencyRef | `value_name` |Reference to the currency in which all amounts on the associated transaction are expressed.| 
 | CustomerRef | `value_name` | The ID (Unique QuickBooks Online ID) for the referenced customer/vendor|
@@ -29,7 +29,6 @@ Field  | Type                          | Description |
 |PaymentMethodRef| `value_name`| |
 |RemainingCredit | Decimal | |
 |SalesTermRef| value_name | |
-
 |SyncToken| String | Version number of the object. It is used to lock an object for use by one app at a time. Read Only|
 |TxnTaxDetail| `TxnTaxDetail` | This data type provides information for taxes charged on the transaction as a whole. |
 |TotalAmt| Decimal| Indicates the total amount of the transaction. This includes the total of all the charges, allowances, and taxes. Read Only|

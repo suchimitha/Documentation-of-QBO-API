@@ -27,23 +27,22 @@ The Invoice object has the following parameters.
 | SalesTermRef | value_name | Reference to the sales term associated with the transaction.|
 | CustomField | `CustomFieldDetails` | One of, up to three custom fields for the transaction. Available for custom fields so configured for the company. |
 | Line | `LineItem` | Individual line items of a transaction. |
-
-|SyncToken| String | Read Only|
-|TxnTaxDetail| `TxnTaxDetail` | |
-|TotalAmt| Decimal| Read Only|
+|SyncToken| String | Version number of the object. It is used to lock an object for use by one app at a time. Read Only|
+|TxnTaxDetail| `TxnTaxDetail` | This data type provides information for taxes charged on the transaction as a whole. |
+|TotalAmt| Decimal| Indicates the total amount of the transaction. This includes the total of all the charges, allowances, and taxes. Read Only|
 |HomeBalance | Decimal | Read Only|
-|Balance| Decimal | Read Only|
-|EmailStatus| Sring| |
-|MetaData| `MetaData`| Read Only|
-|ShipAddr| `AddressWrapper` | |
+|Balance| Decimal | The balance reflecting any payments made against the transaction. Read Only|
+|EmailStatus| Sring| Email status of the invoice. Valid values: NotSet, NeedToSend, EmailSent.|
+|MetaData| `MetaData`| Descriptive information about the object. The MetaData values are set by Data Services and are read only|
+|ShipAddr| `AddressWrapper` | Identifies the address where the goods must be shipped.|
 |ShipMethodRef| `value_name` | |
 |ShipDate| String | |
 |TrackingNum| String | | 
 |Type| String | |
-|ClassRef| `value_name`| |
+|ClassRef| `value_name`| Reference to the Class associated with the transaction.|
 |DepositToAccountRef| `value_name` | | 
 |DiscountLineDetail| `DiscountDetails`| | 
-|ExchangeRate| Decimal | | 
+|ExchangeRate| Decimal | The number of home currency units it takes to equal one unit of currency specified by CurrencyRef.| 
 
 
 
@@ -70,7 +69,7 @@ The Invoice object has the following parameters.
 | Line5 | String | Fifth line of the address |
 | City  | String | City |
 | CountrySubDivisionCode | String | Subdivision code|
-| PostalCode | String | Postal code|
+| PostalCode | String | Postal code|s
 | Country | String | Country|
 
 
@@ -82,18 +81,18 @@ The Invoice object has the following parameters.
 | Amount | Decimal |
 | Description | String |
 | DetailType | String | 
-| `SalesItemLineDetail` | SalesItemLineDetail |
-| `ItemBasedExpenseLineDetail` | ItemBasedExpenseLineDetail |
-| `AccountBasedExpenseLineDetail` | AccountBasedExpenseLineDetail |
-| `DiscountLineDetail` | DiscountLineDetail |
+| SalesItemLineDetail | `SalesItemLineDetail` |
+| ItemBasedExpenseLineDetail | `ItemBasedExpenseLineDetail` |
+| AccountBasedExpenseLineDetail | `AccountBasedExpenseLineDetail` |
+| DiscountLineDetail | `DiscountLineDetail` |
 | TaxInclusiveAmt | Decimal |
 
 
 |SalesItemLineDetail fields | Type| 
 |:---------------------|:-----------|
-| `ItemRef` | value_name |
-| `ClassRef` | value_name |
-| `TaxCodeRef` | value_name |
+| ItemRef | `value_name` |
+| ClassRef | `value_name` |
+| TaxCodeRef | `value_name` |
 | UnitPrice | Decimal | 
 | Qty | Decimal | 
 | ServiceDate | String | 

@@ -14,10 +14,10 @@ To create a QuickBooks Online Vendor, pass the values to Accountwrapper and assi
 ```scss
 try{
 	qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();	
-	List<qboapi_g1.AccountWrapper> xeroContactsList = new List<qboapi_g1.AccountWrapper>();
-	qboapi_g1.AccountWrapper xeroContact = new qboapi_g1.AccountWrapper();
-	//xeroContact.name='Test Vendor Name -'; 
-	xeroContact.DisplayName = 'Vendor full name';
+	List<qboapi_g1.AccountWrapper> qboContactsList = new List<qboapi_g1.AccountWrapper>();
+	qboapi_g1.AccountWrapper qboContact = new qboapi_g1.AccountWrapper();
+	//qboContact.name='Test Vendor Name -'; 
+	qboContact.DisplayName = 'Vendor full name';
     
     qboapi_g1.AccountWrapper.AddressWrapper adwrap = new qboapi_g1.AccountWrapper.AddressWrapper();
     adwrap.Line1 = '11-21-34/A';
@@ -25,11 +25,11 @@ try{
     adwrap.CountrySubDivisionCode = 'rangareddy';
     adwrap.PostalCode = '500087';
     adwrap.Country = 'India';
-    xeroContact.BillAddr = adwrap;
-    xeroContact.AccountId = '0012w0000092ngS';
+    qboContact.BillAddr = adwrap;
+    qboContact.AccountId = '0012w0000092ngS';
 
-	xeroContactsList.add(xeroContact);            
-	req.qboContacts= xeroContactsList;
+	qboContactsList.add(qboContact);            
+	req.qboContacts= qboContactsList;
 
 	qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('createvendor', req);
 	if(res.errors != null && res.errors.size()>0){

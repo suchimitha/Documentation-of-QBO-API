@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Breadwinner Xero API is hosted on GitHub Pages."
+description: "Breadwinner QuickBooks Online API is hosted on GitHub Pages."
 permalink: /
 ---
 
@@ -30,12 +30,12 @@ This is a global class where you can access RequestObject and ResponseObject.
 ## BreadwinnerQBOAPI Methods
 The following are instance methods for <i>BreadwinnerQBOAPI</i>.
 - <b>Call()</b><br/>
-This is a global method which will return a list of Customers or Invoices in the form of [BreadwinnerQBOAPI.ResponseObject]({{ site.baseurl }}{% link docs/response.md %}). It takes two parameters.
+This is a global method which will return a list of Customers or Invoices in the form of [BreadwinnerQBOAPI.ResponseObject](https://dev-qbo.breadwinner.com/docs/response/). It takes two parameters.
 
 > 1. <b>Action</b>: Used to define the type of action that needs to be performed.<br/>
-E.g : createContact, createVendor,… see [List of actions]({{ site.baseurl }}{% link docs/configuration.md %})
+E.g : createContact, createVendor,… see [List of available actions](https://dev-qbo.breadwinner.com/docs/configuration/)
 
->  2. <b>Request</b>: An instance of [RequestObject]({{ site.baseurl }}{% link docs/configuration.md %}) is accepted.<br/>
+>  2. <b>Request</b>: An instance of [RequestObject](https://dev-qbo.breadwinner.com/docs/configuration/) is accepted.<br/>
 E.g :  BreadwinnerQBOAPI.RequestObject request = new BreadwinnerQBOAPI.RequestObject();
 
 Note: This is a synchronous method, it will make http callouts. So, to access "BreadwinnerQBOAPI.Call()" method please enable callouts by annotating the future method, or use Queueable Apex.<br/>

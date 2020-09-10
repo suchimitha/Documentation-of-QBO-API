@@ -14,10 +14,10 @@ To Update a QuickBooks Online Customer pass the values to Accountwrapper along w
 ```scss
 try{
 	qboapi_g1.BreadwinnerQBOAPI.RequestObject req = new  qboapi_g1.BreadwinnerQBOAPI.RequestObject();	
-	List<qboapi_g1.AccountWrapper> xeroContactsList = new List<qboapi_g1.AccountWrapper>();
-	qboapi_g1.AccountWrapper xeroContact = new qboapi_g1.AccountWrapper();
-	//xeroContact.name='Test Vendor Name -'; 
-	xeroContact.DisplayName = 'Vendor full name updated';
+	List<qboapi_g1.AccountWrapper> qboContactsList = new List<qboapi_g1.AccountWrapper>();
+	qboapi_g1.AccountWrapper qboContact = new qboapi_g1.AccountWrapper();
+	//qboContact.name='Test Vendor Name -'; 
+	qboContact.DisplayName = 'Vendor full name updated';
     
     qboapi_g1.AccountWrapper.AddressWrapper adwrap = new qboapi_g1.AccountWrapper.AddressWrapper();
     adwrap.Line1 = '11-21-34/A';
@@ -25,11 +25,11 @@ try{
     adwrap.CountrySubDivisionCode = 'rangareddy';
     adwrap.PostalCode = '500087';
     adwrap.Country = 'India';
-    xeroContact.BillAddr = adwrap;
-	xeroContact.id = '85';
+    qboContact.BillAddr = adwrap;
+	qboContact.id = '85';
 
-	xeroContactsList.add(xeroContact);            
-	req.qboContacts= xeroContactsList;
+	qboContactsList.add(qboContact);            
+	req.qboContacts= qboContactsList;
 
 	qboapi_g1.BreadwinnerQBOAPI.ResponseObject res =  qboapi_g1.BreadwinnerQBOAPI.call('updatevendor', req);
 	if(res.errors != null && res.errors.size()>0){

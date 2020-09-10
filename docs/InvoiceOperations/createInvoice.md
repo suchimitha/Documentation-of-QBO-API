@@ -100,8 +100,8 @@ try{
 	BreadwinnerQBOAPI.ResponseObject res = BreadwinnerQBOAPI.call('createinvoice', req);//BreadwinnerQBOAPI.call('createinvoice', req);//BreadwinnerQBOAPI.call('createsalesreceipt', req);
 	system.debug('========='+res);
     
-	system.debug('created Invoice' +res.xeroInvoices );
+	system.debug('created Invoice' +res );
 	}catch(Exception ex){
-		System.debug('Exception occurred while creating customers in Xero.'+ex.getStackTraceString());
+		System.debug('Exception occurred while creating customers in QBO.'+ex.getStackTraceString());
 	}
 ```

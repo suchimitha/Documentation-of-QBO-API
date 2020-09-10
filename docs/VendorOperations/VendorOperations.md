@@ -3,7 +3,7 @@ layout: default
 title: Vendor Operations
 nav_order: 6
 has_children: true
-permalink: docs/CustomerOperations
+permalink: docs/VendorOperations
 ---
 
 # Vendor Operations

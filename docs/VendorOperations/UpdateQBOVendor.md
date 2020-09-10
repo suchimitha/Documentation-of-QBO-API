@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Update Vendor
-parent: Contact Operations
+parent: Vendor Operations
 nav_order: 8
 ---
 

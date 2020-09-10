@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fetch Vendor
-parent: Contact Operations
+parent: Vendor Operations
 nav_order: 7
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fetch Customer
-parent: Contact Operations
+parent: Customer Operations
 nav_order: 3
 ---
 

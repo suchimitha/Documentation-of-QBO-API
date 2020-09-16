@@ -2,7 +2,7 @@
 layout: default
 title: Read Vendor
 parent: Vendor Operations
-nav_order: 3
+nav_order: 1
 ---
 
 # Read Vendor

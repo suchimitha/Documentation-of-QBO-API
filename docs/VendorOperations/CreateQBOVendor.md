@@ -2,7 +2,7 @@
 layout: default
 title: Create Vendor
 parent: Vendor Operations
-nav_order: 1
+nav_order: 2
 ---
 
 # Create Vendor

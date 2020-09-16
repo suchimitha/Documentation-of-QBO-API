@@ -2,7 +2,7 @@
 layout: default
 title: Create Invoice
 parent: Invoice Operations
-nav_order: 1
+nav_order: 2
 ---
 
 # Create Invoice
@@ -10,10 +10,81 @@ nav_order: 1
 
 This is under development.
 
-## Sample Code
-
+## Sample Requests and Responses
 
 To create an Invoice, pass the values to InvoiceWrapper and assign it to request.qboInvoices and then call the method BreadwinnerQBOAPI.call(). Here customer CustomerRef (QuickBooks Contact Id) is required.
+
+
+
+```scss
+Map<String, Object> QBInvoice = new Map<String, Object>();
+    QBInvoice.put('classification', new Map<String, Object>{'internalId'=>'5'});
+    QBInvoice.put('currencyValue', new Map<String, Object>{'internalId'=>'2'});
+    QBInvoice.put('customForm', new Map<String, Object>{'internalId'=>'124'});
+    QBInvoice.put('department', new Map<String, Object>{'internalId'=>'2'});
+    QBInvoice.put('discountItem', new Map<String, Object>{'internalId'=>'-6'});
+    QBInvoice.put('discountRate', '-15');
+    QBInvoice.put('dueDate', DateTime.newInstance(2020, 12, 31).getTime()/1000);
+    QBInvoice.put('entity', new Map<String, Object>{'internalId'=>'362'});
+    QBInvoice.put('entityStatus', new Map<String, Object>{'internalId'=>'8'});
+    QBInvoice.put('expectedCloseDate', DateTime.newInstance(2020, 12, 31).getTime()/1000);
+    QBInvoice.put('externalId', 'SFId: a012w00000Oyssh');
+    QBInvoice.put('memo', 'Order 25');
+    QBInvoice.put('otherRefNum', '4343399');
+    QBInvoice.put('probability', 35);
+    QBInvoice.put('title', 'SF Estimate');
+    QBInvoice.put('tranDate', DateTime.newInstance(2020, 09, 07).getTime()/1000);
+//  Initializing the Estimate Custom Fields
+List<Object> estCustomFieldList = new List<Object>();
+Map<String,Object> estCustomField = new Map<String,Object>();
+    estCustomField.put('fieldType', 'select');
+    estCustomField.put('scriptId', 'custbody_customlist');
+    estCustomField.put('valueLookup', new Map<String,Object>{'internalId'=>'2'});
+    estCustomFieldList.add(estCustomField);
+
+//  Adding the Estimate Custom Fields
+    QBInvoice.put('customFieldList', new Map<String,Object>{'customField'=>estCustomFieldList});
+
+//  Initializing the Estimate Line Items
+List<Object> lineItemList = new List<Object>();
+Map<String, Object> lineItem = new Map<String, Object>();
+    lineItem.put('description', 'A weapon for shooting arrows');
+    lineItem.put('item', new Map<String, Object>{'internalId'=>'239'});
+    lineItem.put('quantity', 1);
+    lineItem.put('rate', '999');
+
+//  Initializing the Line Item custom fields
+List<Object> liCustomFieldList = new List<Object>();
+Map<String, Object> liCustomField = new Map<String, Object>();
+    liCustomField.put('fieldType', 'boolean');
+    liCustomField.put('scriptId', 'custbody_checkbox');
+    liCustomField.put('value', 'true');
+    liCustomFieldList.add(liCustomField);
+
+//  Adding the Estimate Line Item Custom Fields
+    lineItem.put('customFieldList',new Map<String,Object>{'customField'=>liCustomFieldList});
+    lineItemList.add(lineItem);
+
+//  Adding the Line Items to Estimate
+Map<String, Object> estimateLineitemList = new Map<String, Object>();
+    estimateLineitemList.put('item',lineItemList);
+    nsEstimate.put('itemList',estimateLineitemList);
+
+//  Initializing the RequestJSON Data to be passed.
+Map<String, Object> requestJSONMap = new Map<String, Object>();
+    requestJSONMap.put('estimates', new List<Object>{nsEstimate});
+    String reqJSON = JSON.serialize(requestJSONMap);
+
+Map<String, Object> reqObj = new Map<String, Object>();
+    reqObj.put('version', '1.0');
+    reqObj.put('action', 'createEstimate');
+    reqObj.put('requestJSON', reqJSON);
+
+//  Placing a request to Breadwinner Global API
+Map<String, Object> resp = breadwinner_ns.BreadwinnerNetSuiteAPI.call(reqObj);
+System.debug(resp);
+```
+
 
 ```scss
 try{

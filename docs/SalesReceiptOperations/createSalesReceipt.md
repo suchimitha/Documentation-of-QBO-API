@@ -2,7 +2,7 @@
 layout: default
 title: Create Sales Receipt
 parent: Sales Receipt Operations
-nav_order: 1
+nav_order: 2
 ---
 
 # Create Sales Receipt

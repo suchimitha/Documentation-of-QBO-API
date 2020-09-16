@@ -2,7 +2,7 @@
 layout: default
 title: Read Bills
 parent: Invoice Operations
-nav_order: 6
+nav_order: 4
 ---
 # Read Bills
 

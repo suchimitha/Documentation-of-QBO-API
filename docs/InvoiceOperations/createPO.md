@@ -2,7 +2,7 @@
 layout: default
 title: Create Purchase Order
 parent: Invoice Operations
-nav_order: 7
+nav_order: 8
 ---
 
 # Create Purchase Order

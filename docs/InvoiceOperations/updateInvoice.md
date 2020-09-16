@@ -2,7 +2,7 @@
 layout: default
 title: Update Invoice
 parent: Invoice Operations
-nav_order: 2
+nav_order: 3
 ---
 
 # Update Invoice

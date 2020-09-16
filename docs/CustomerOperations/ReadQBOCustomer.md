@@ -2,7 +2,7 @@
 layout: default
 title: Read Customer
 parent: Customer Operations
-nav_order: 3
+nav_order: 1
 ---
 
 # Read Customer

@@ -2,7 +2,7 @@
 layout: default
 title: Update Customer
 parent: Customer Operations
-nav_order: 2
+nav_order: 3
 ---
 
 # Update Customer

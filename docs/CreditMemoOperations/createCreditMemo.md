@@ -2,7 +2,7 @@
 layout: default
 title: Create Credit Memo
 parent: Credit Memo Operations
-nav_order: 1
+nav_order: 2
 ---
 
 # Create Credit Memo
